@@ -1,0 +1,3 @@
+for seed in 1 2 3 4 5; do
+    python train_PEBBLE.py env=metaworld_button-press-v2 multi_obj=false polite=false weighted=false ensemble_size=3 seed=$seed agent.params.actor_lr=0.0003 agent.params.critic_lr=0.0003 gradient_update=1 activation=tanh num_unsup_steps=9000 num_train_steps=1000000 agent.params.batch_size=512 double_q_critic.params.hidden_dim=256 double_q_critic.params.hidden_depth=3 diag_gaussian_actor.params.hidden_dim=256 diag_gaussian_actor.params.hidden_depth=3 reward_update=10 num_interact=5000 max_feedback=1000 reward_batch=10 feed_type=$1 teacher_beta=-1 teacher_gamma=1 teacher_eps_mistake=0.1 teacher_eps_skip=0 teacher_eps_equal=0 feed_type=1
+done
